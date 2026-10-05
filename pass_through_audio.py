@@ -5,6 +5,13 @@ Make sure you change the username you're sending the message to so you can exper
 
 import speech_recognition as sr
 import send_message as send_message
+import time
+import multiprocessing
+from openai import OpenAI
+import json
+import os
+
+openAIKey = os.environ["OPENAI_API_KEY"]
 
 if __name__ == "__main__":
     # Initialize recognizer
@@ -25,7 +32,7 @@ if __name__ == "__main__":
             "color": "Light Blue",
             "emotion": "Neutral",
         }
-        send_message.send_message("GuestUserName", message)
+        send_message.send_message("GuestEmpatheticSeed930", message)
 
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
